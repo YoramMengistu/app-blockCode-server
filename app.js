@@ -11,7 +11,7 @@ const app = express();
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: "http://localhost:5174",
+    origin: "https://deft-dragon-9f232e.netlify.app",
     methods: ["GET", "POST"],
   },
 });
@@ -143,7 +143,7 @@ io.on("connection", (socket) => {
   });
 });
 
-app.use(cors({ origin: "https://app-platfrom-server-1.onrender.com" }));
+app.use(cors({ origin: "*" }));
 app.use(express.json());
 
 // Route
